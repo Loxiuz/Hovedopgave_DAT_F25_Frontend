@@ -8,6 +8,7 @@ export default function ExportForm() {
         exportFormat: "csv",
         selectedEntities: "",
         appliedFilters: "",
+        fileName: "export.csv",
     });
 
     function handleFormChange(event: React.ChangeEvent<HTMLFormElement>) {
