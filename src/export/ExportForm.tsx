@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import type { ExportRequest } from "../types";
+import type { ExportRequestDTO } from "../types";
 import { createExportRequest } from "../api/exportApi";
 
 export default function ExportForm() {
-    const [formData, setFormData] = useState<ExportRequest>({
+    const [formData, setFormData] = useState<ExportRequestDTO>({
         employeeId: 1,
         exportFormat: "csv",
         selectedEntities: "",

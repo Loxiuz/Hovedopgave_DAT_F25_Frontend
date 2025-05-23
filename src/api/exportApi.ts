@@ -1,15 +1,15 @@
 import { API_URL } from "../settings";
-import type { ExportRequest } from "../types";
+import type { ExportRequestDTO } from "../types";
 
 const exportUrl = `${API_URL}/export`;
 
-export async function createExportRequest(exportRequest: ExportRequest): Promise<void> {
+export async function createExportRequest(ExportRequestDTO: ExportRequestDTO): Promise<void> {
     const response = await fetch(exportUrl, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(exportRequest),
+        body: JSON.stringify(ExportRequestDTO),
     });
 
     if (!response.ok) {

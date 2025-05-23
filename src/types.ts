@@ -2,7 +2,7 @@ interface LayoutProps {
     children: React.ReactNode;
 }
 
-interface ExportRequest {
+interface ExportRequestDTO {
     employeeId: number;
     exportFormat: string;
     selectedEntities: string;
@@ -10,4 +10,4 @@ interface ExportRequest {
     fileName: string;
 }
 
-export type { LayoutProps, ExportRequest };
+export type { LayoutProps, ExportRequestDTO };
