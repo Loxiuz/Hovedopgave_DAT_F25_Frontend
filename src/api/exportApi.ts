@@ -3,7 +3,7 @@ import type { ExportRequestDTO } from "../types";
 
 const exportUrl = `${API_URL}/export`;
 
-export async function createExportRequest(ExportRequestDTO: ExportRequestDTO): Promise<void> {
+async function createExportRequest(ExportRequestDTO: ExportRequestDTO): Promise<void> {
     const response = await fetch(exportUrl, {
         method: "POST",
         headers: {
@@ -32,3 +32,5 @@ async function downloadFile(response: Response){
 
     window.URL.revokeObjectURL(url);
 }
+
+export { createExportRequest };
