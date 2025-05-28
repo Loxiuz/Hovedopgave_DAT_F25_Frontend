@@ -2,12 +2,24 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-interface ExportRequestDTO {
+interface ExportDtoRequest {
   employeeId: number;
   exportFormat: string;
   selectedEntities: string;
   appliedFilters: AppliedFilters;
   fileName: string;
+}
+
+interface ExportDtoResponse {
+  id: number;
+  employeeId: number;
+  exportFormat: string;
+  exportCreation: string; 
+  selectedEntities: string;
+  appliedFilters: AppliedFilters;
+  fileName: string;
+  status: "PENDING" | "COMPLETED" | "FAILED";
+  fileSize?: number; 
 }
 
 /* Filter structure for export request body */
@@ -30,7 +42,9 @@ interface ValidExportFilterFields {
 
 export type {
   LayoutProps,
-  ExportRequestDTO,
+  ExportDtoRequest,
+  ExportDtoResponse,
   ValidExportFilterFields,
   AppliedFilters,
+
 };

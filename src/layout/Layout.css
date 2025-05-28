@@ -1,8 +1,8 @@
 #layout {
   display: flex;
   background-color: #c4c4c4;
-  height: 100vh;
-  width: auto;
+  height: auto;
+  width: 100%;
 }
 
 #menuBar {
