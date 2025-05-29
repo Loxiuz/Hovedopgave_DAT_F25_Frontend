@@ -16,6 +16,14 @@
     text-align: center;
 }
 
+#dashboard-table button {
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
 #dashboard-header {
     background-color: #3b3b3b;
     font-weight: bold;

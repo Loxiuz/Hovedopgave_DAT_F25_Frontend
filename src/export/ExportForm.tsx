@@ -3,7 +3,7 @@ import type { AppliedFilters, ExportDtoRequest } from "../types";
 import { createExportRequest } from "../api/exportApi";
 import { VALID_EXPORT_FILTER_FIELDS } from "../constants/validFilterFieldsForEntities";
 import "./ExportForm.css";
-import ExportRequestDashboard from "./ExportRequestDashboard";
+import ExportRequestDashboard from "../exportRequest/ExportRequestDashboard";
 
 export default function ExportForm() {
     const [formData, setFormData] = useState<ExportDtoRequest>({
