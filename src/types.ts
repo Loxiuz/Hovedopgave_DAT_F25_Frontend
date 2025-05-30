@@ -14,12 +14,12 @@ interface ExportDtoResponse {
   id: number;
   employeeId: number;
   exportFormat: string;
-  exportCreation: string; 
+  exportCreation: string;
   selectedEntities: string;
   appliedFilters: AppliedFilters;
   fileName: string;
   status: "PENDING" | "COMPLETED" | "FAILED";
-  fileSize?: number; 
+  fileSize?: number;
 }
 
 /* Filter structure for export request body */
@@ -46,5 +46,4 @@ export type {
   ExportDtoResponse,
   ValidExportFilterFields,
   AppliedFilters,
-
 };
