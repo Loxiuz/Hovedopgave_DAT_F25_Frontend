@@ -164,11 +164,17 @@ export default function ExportForm() {
   ) {
     const field = e.target.value;
     console.log("Selected field:", field, "for entity:", entity);
-    setSelectedEntitiesFilters((prev) =>
-      prev.map((f, i) =>
-        i === index && f[entity] ? { [entity]: { ...f[entity], field } } : f
-      )
-    );
+    console.log(selectedEntitiesFilters.filter((f) => f[entity].field === field))
+    if (selectedEntitiesFilters.filter((f) => f[entity].field === field).length > 0) {
+      alert("you can only have one of each filter field per entity");
+    } else {
+      setSelectedEntitiesFilters((prev) =>
+        prev.map((f, i) =>
+          i === index && f[entity] ? { [entity]: { ...f[entity], field } } : f
+        )
+      );
+    }
+
   }
 
   function handleAddFilterBtnClick(
