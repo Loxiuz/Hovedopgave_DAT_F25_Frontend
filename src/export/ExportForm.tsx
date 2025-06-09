@@ -13,7 +13,7 @@ export default function ExportForm() {
     exportFormat: "csv",
     selectedEntities: "",
     appliedFilters: [] as AppliedFilters,
-    fileName: "export.csv",
+    fileName: "export",
   });
 
   const [selectedEntities, setSelectedEntities] = useState<string[]>([]);
@@ -48,6 +48,7 @@ export default function ExportForm() {
       ...formData,
       selectedEntities: selectedEntities.join(","),
       appliedFilters: selectedEntitiesFilters,
+      fileName: formData.fileName + `.${formData.exportFormat}`,
     };
     if (selectedEntities.length > 0) {
       console.log(body);
