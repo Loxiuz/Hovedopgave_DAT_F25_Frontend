@@ -96,26 +96,31 @@ export default function ExportForm() {
 
     return (
       <div key={`${entity}-filter-row-${i}`} className="filter-row">
-        <select
-          name={`${entity}-filters`}
-          id={`${entity}-filters`}
-          onChange={(e) => handleFilterSelectionChange(e, i, entity)}
-          value={selectedEntitiesFilters[i]?.[entity]?.field ?? ""}
-        >
-          <option value="">Select filter field</option>
-          {filters.validFilterFields.map((field) => (
-            <option key={field} value={field}>
-              {field}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          id={`${entity}-filter-value`}
-          placeholder="Filter value"
-          onChange={(e) => handleFilterValueChange(e, i, entity)}
-          value={selectedEntitiesFilters[i]?.[entity]?.value ?? ""}
-        />
+        {filters.validFilterFields.length > 0 && (
+          <>
+            <select
+              name={`${entity}-filters`}
+              id={`${entity}-filters`}
+              onChange={(e) => handleFilterSelectionChange(e, i, entity)}
+              value={selectedEntitiesFilters[i]?.[entity]?.field ?? ""}
+            >
+              <option value="">Select filter field</option>
+              {filters.validFilterFields.map((field) => (
+                <option key={field} value={field}>
+                  {field}
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              id={`${entity}-filter-value`}
+              placeholder="Filter value"
+              onChange={(e) => handleFilterValueChange(e, i, entity)}
+              value={selectedEntitiesFilters[i]?.[entity]?.value ?? ""}
+            />
+          </>
+        ) || (<span>Filters Unavailable</span>)}
+
         <button
           id="remove-filter-btn"
           onClick={(e) => handleRemoveFilterBtnClick(e, i, entity)}
@@ -201,6 +206,7 @@ export default function ExportForm() {
                   selectedEntitiesFilters.map((filter, i) => {
                     const filterEntity = Object.keys(filter)[0];
                     if (filterEntity !== entity) return null;
+
                     return renderFilterFieldRow(entity, i);
                   })}
                 <div id="add-filter-btn-container">
