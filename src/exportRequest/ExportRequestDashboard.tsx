@@ -36,7 +36,7 @@ export default function ExportRequestDashboard() {
 
     return (
         <div id="dashboard-container">
-            <h1>Export Request Activity</h1>
+            <h1>Export Activity</h1>
             <table id="dashboard-table">
                 <thead id="dashboard-header">
                     <tr>
